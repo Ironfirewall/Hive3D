@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Core.h"
+
 namespace Hive {
-	class Application
+	class HAPI Application
 	{
 	public:
 		Application();
@@ -9,5 +11,7 @@ namespace Hive {
 
 		void Run();
 	};
+
+	Application* CreateApplication();
 }
 

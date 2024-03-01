@@ -21,7 +21,13 @@
     <ClInclude Include="src\Hive\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="src\Hive\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hive\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -29,7 +35,7 @@
     <ClCompile Include="src\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="src\Hive\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
