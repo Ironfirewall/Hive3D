@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -57,6 +57,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>HV_PLATFORM_WINDOWS;HV_BUILD_DLL;HV_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Hive3D\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,6 +72,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>HV_PLATFORM_WINDOWS;HV_BUILD_DLL;HVNDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Hive3D\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,6 +82,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Hive\Log.h" />
     <ClInclude Include="src\Hive.h" />
     <ClInclude Include="src\Hive\Application.h" />
     <ClInclude Include="src\Hive\Core.h" />
@@ -87,6 +90,7 @@
     <ClInclude Include="src\test.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Hive\Log.cpp" />
     <ClCompile Include="src\Hive\Application.cpp" />
     <ClCompile Include="src\test.cpp" />
   </ItemGroup>

@@ -1,0 +1,3 @@
+[submodule "Hive3D/vendor/spdlog"]
+	path = Hive3D/vendor/spdlog
+	url = https://github.com/gabime/spdlog
