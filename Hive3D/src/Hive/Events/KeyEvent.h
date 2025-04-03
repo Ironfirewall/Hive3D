@@ -2,9 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
-
 namespace Hive {
 	class HAPI KeyEvent : public Event {
 	public:

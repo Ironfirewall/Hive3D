@@ -1,9 +1,6 @@
 #pragma once
-
+#include "HivePreCompiledHeader.h"
 #include "Hive/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Hive {
 

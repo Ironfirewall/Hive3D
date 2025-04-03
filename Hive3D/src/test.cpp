@@ -1,6 +1,7 @@
+#include "HivePreCompiledHeader.h"
 #include "test.h"
 
-#include <iostream>
+//#include <iostream>
 
 namespace Hive {
 

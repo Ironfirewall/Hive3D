@@ -1,3 +1,5 @@
+#include "HivePreCompiledHeader.h"
+
 #include "Log.h"
 
 namespace Hive {

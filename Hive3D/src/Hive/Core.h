@@ -10,4 +10,12 @@
 	#error Hive only supports Windows for now
 #endif
 
+#ifdef HV_ENABLED_ASSERTS
+	#define HV_ASSERT(x, ...) { if(!x) { HV_ERROR("Assertion Failed: {0}", __VA__ARGS); __debugbreak(); } }
+	#define HV_CORE_ASSERT(x, ...) { if(!x) { HV_CORE_ERROR("Assertion Failed: {0}", __VA__ARGS); __debugbreak(); } }
+#else
+	#define HV_ASSERT(x, ...);
+	#define HV_CORE_ASSERT(x, ...);
+#endif
+
 #define BIT(x) (1 << x)

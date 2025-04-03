@@ -10,6 +10,12 @@ workspace "Hive3D"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to the root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Hive3D/vendor/GLFW/include"
+
+include "Hive3D/vendor/GLFW"
+
 project "Hive3D"
     location "Hive3D"
     kind "SharedLib"
@@ -17,6 +23,9 @@ project "Hive3D"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "HivePreCompiledHeader.h"
+    pchsource "Hive3D/src/HivePreCompiledHeader.cpp"
 
     files
     {
@@ -27,11 +36,23 @@ project "Hive3D"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    --libdirs
+    --{
+    --    "%{prj.name}/vendor/GLFW/lib/GLFW"
+    --}
+
+    links
+    {
+        "opengl32.lib",
+        "GLFW"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
+        cppdialect "C++23"
         staticruntime "On"
         systemversion "latest"
 
@@ -44,6 +65,12 @@ project "Hive3D"
         postbuildcommands
         {
             ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+        }
+
+        buildoptions
+        {
+            "/utf-8",
+            "/MT"
         }
 
     filter "configurations:Debug"
@@ -83,8 +110,14 @@ project "Sandbox"
         "Hive3D"
     }
 
+    buildoptions
+    {
+        "/utf-8",
+        "/MT"
+    }
+
     filter "system:windows"
-        cppdialect "C++17"
+        cppdialect "C++23"
         staticruntime "On"
         systemversion "latest"
 
