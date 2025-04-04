@@ -16,6 +16,8 @@ namespace Hive {
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
 	};
 
 	Application* CreateApplication();

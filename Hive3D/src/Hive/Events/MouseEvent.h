@@ -66,9 +66,9 @@ namespace Hive {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class HAPI MouseButtonReleaseEvent : public MouseButtonEvent {
+	class HAPI MouseButtonReleasedEvent : public MouseButtonEvent {
 	public:
-		MouseButtonReleaseEvent(int button)
+		MouseButtonReleasedEvent(int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override {

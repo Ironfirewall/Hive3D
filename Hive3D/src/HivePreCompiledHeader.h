@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Hive/Log.h"
+
 #ifdef HV_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

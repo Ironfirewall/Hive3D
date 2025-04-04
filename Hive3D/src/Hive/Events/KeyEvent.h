@@ -34,9 +34,9 @@ namespace Hive {
 		int m_RepeatCount;
 	};
 
-	class HAPI KeyReleaseEvent : public KeyEvent {
+	class HAPI KeyReleasedEvent : public KeyEvent {
 	public:
-		KeyReleaseEvent(int keycode)
+		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override {
