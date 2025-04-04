@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 
 	Hive::Log::Init();
 	HV_CORE_WARN("Initialized Core Logger!");
-	HV_CLIENT_INFO("Initialized Client Logger!");
+	HV_INFO("Initialized Client Logger!");
 	HV_CORE_INFO("Starting up the engine!");
 
 	auto app = Hive::CreateApplication();

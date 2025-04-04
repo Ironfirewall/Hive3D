@@ -67,23 +67,38 @@ project "Hive3D"
             ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
         }
 
-        buildoptions
-        {
-            "/utf-8",
-            "/MT"
-        }
+        -- buildoptions
+        -- {
+        --     "/utf-8",
+        --     "/MT"
+        -- }
 
     filter "configurations:Debug"
         defines "HV_DEBUG"
         symbols "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MDd"
+        }
 
     filter "configurations:Release"
         defines "HV_RELEASE"
         optimize "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MD"
+        }
 
     filter "configurations:Dist"
         defines "HV_DIST"
         optimize "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MD"
+        }
 
 project "Sandbox"
     location "Sandbox"
@@ -110,11 +125,11 @@ project "Sandbox"
         "Hive3D"
     }
 
-    buildoptions
-    {
-        "/utf-8",
-        "/MT"
-    }
+    -- buildoptions
+    -- {
+    --     "/utf-8",
+    --     "/MT"
+    -- }
 
     filter "system:windows"
         cppdialect "C++23"
@@ -129,11 +144,26 @@ project "Sandbox"
     filter "configurations:Debug"
         defines "HV_DEBUG"
         symbols "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MDd"
+        }
 
     filter "configurations:Release"
         defines "HV_RELEASE"
         optimize "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MD"
+        }
 
     filter "configurations:Dist"
         defines "HV_DIST"
         optimize "On"
+        buildoptions
+        {
+            "/utf-8",
+            "/MD"
+        }

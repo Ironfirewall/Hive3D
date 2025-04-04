@@ -37,6 +37,12 @@
     <ClInclude Include="src\Hive\Events\MouseEvent.h">
       <Filter>Hive\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hive\Layer.h">
+      <Filter>Hive</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hive\LayerStack.h">
+      <Filter>Hive</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hive\Log.h">
       <Filter>Hive</Filter>
     </ClInclude>
@@ -51,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hive\Application.cpp">
+      <Filter>Hive</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hive\Layer.cpp">
+      <Filter>Hive</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hive\LayerStack.cpp">
       <Filter>Hive</Filter>
     </ClCompile>
     <ClCompile Include="src\Hive\Log.cpp">

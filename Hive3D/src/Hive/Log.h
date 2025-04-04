@@ -29,10 +29,10 @@ namespace Hive {
 #define HV_CORE_FATAL(...)    ::Hive::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 // Client log macros
-#define HV_CLIENT_TRACE(...)  ::Hive::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define HV_CLIENT_INFO(...)   ::Hive::Log::GetClientLogger()->info(__VA_ARGS__)
-#define HV_CLIENT_DEBUG(...)  ::Hive::Log::GetClientLogger()->debug(__VA_ARGS__)
-#define HV_CLIENT_WARN(...)   ::Hive::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define HV_CLIENT_ERROR(...)  ::Hive::Log::GetClientLogger()->error(__VA_ARGS__)
-#define HV_CORE_FATAL(...)    ::Hive::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define HV_TRACE(...)  ::Hive::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define HV_INFO(...)   ::Hive::Log::GetClientLogger()->info(__VA_ARGS__)
+#define HV_DEBUG(...)  ::Hive::Log::GetClientLogger()->debug(__VA_ARGS__)
+#define HV_WARN(...)   ::Hive::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define HV_ERROR(...)  ::Hive::Log::GetClientLogger()->error(__VA_ARGS__)
+#define HV_FATAL(...)    ::Hive::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
