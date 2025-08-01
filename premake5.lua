@@ -1,4 +1,4 @@
-workspace "Hive3D"
+workspace "Hive"
     architecture "x64"
 
     configurations
@@ -12,12 +12,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to the root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "Hive3D/vendor/GLFW/include"
+IncludeDir["GLFW"] = "Hive/vendor/GLFW/include"
 
-include "Hive3D/vendor/GLFW"
+include "Hive/vendor/GLFW"
 
-project "Hive3D"
-    location "Hive3D"
+project "Hive"
+    location "Hive"
     kind "SharedLib"
     language "C++"
 
@@ -25,7 +25,7 @@ project "Hive3D"
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     pchheader "HivePreCompiledHeader.h"
-    pchsource "Hive3D/src/HivePreCompiledHeader.cpp"
+    pchsource "Hive/src/HivePreCompiledHeader.cpp"
 
     files
     {
@@ -116,13 +116,13 @@ project "Sandbox"
 
     includedirs
     {
-        "Hive3D/vendor/spdlog/include",
-        "Hive3D/src"
+        "Hive/vendor/spdlog/include",
+        "Hive/src"
     }
 
     links
     {
-        "Hive3D"
+        "Hive"
     }
 
     -- buildoptions
