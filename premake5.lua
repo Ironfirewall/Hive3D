@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to the root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hive/vendor/GLFW/include"
+IncludeDir["glad"] = "Hive/vendor/glad/include"
 
 include "Hive/vendor/GLFW"
+include "Hive/vendor/glad"
 
 project "Hive"
     location "Hive"
@@ -37,7 +39,8 @@ project "Hive"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glad}"
     }
 
     --libdirs
@@ -48,7 +51,8 @@ project "Hive"
     links
     {
         "opengl32.lib",
-        "GLFW"
+        "GLFW",
+        "glad"
     }
 
     filter "system:windows"
@@ -59,7 +63,8 @@ project "Hive"
         defines
         {
             "HV_PLATFORM_WINDOWS",
-            "HV_BUILD_DLL"
+            "HV_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
